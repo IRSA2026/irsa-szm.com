@@ -1,0 +1,521 @@
+/*______________________________________ ZAKLADNI DEFINICE ___________________*/
+HTML{overflow-y:scroll}
+
+BODY{
+font:81%/1.4 Arial,sans-serif;
+color:#000;
+background:#111; /* barva paticky */
+padding:12px 0 0 0;margin:0;
+text-align:center;
+cursor:default;
+min-width:700px;
+}
+
+A{color:#0033cc;text-decoration:underline}
+A:hover{color:#2A5307;}
+A:active{text-decoration:none}
+A IMG{border:1px solid #0033cc !important;}
+A:hover IMG{border:1px solid #2A5307 !important;}
+
+P{margin:0;padding:0 0 12px 0;}
+
+UL,OL{margin:0 0 6px 22px;padding:0;}
+OL{margin-left:28px;}
+LI{margin:0;padding:0 0 6px 0;}
+
+H1,H2,H3,H4{font-weight:normal;margin:0;padding:0;}
+H1{font-size:153%;font-weight:bold;padding:0 10px 15px 0;color:#122B03;line-height:1.3;}
+H2{font-size:107%;font-weight:bold;padding:7px 0;color:#111;}
+H3{font-size:100%;font-weight:bold;padding:6px 0;color:#0048a9;}
+
+FORM{margin:0;}
+
+SPAN.hinput INPUT{display:none} /* antispam */
+INPUT,TEXTAREA{font-size:100%;font-family:Arial,sans-serif;}
+IMG{vertical-align:top;position:relative;} /* position:relative nezbytne kvuli preloaderu */
+
+.hr{background:url(../../css/zeleny/hr.html) 50% 0 no-repeat;height:2px;width:100%;font-size:0;margin:3px 0 13px 0;}
+
+
+/*______________________________________ OBRAZEK ___________________*/
+.alignleft{float:left !important;clear:left;margin-right:12px !important;margin-bottom:12px;}
+.alignright{float:right !important;clear:right;margin-left:12px !important;margin-bottom:12px;}
+
+DL,DT,DD{margin:0;padding:0;border:0}
+
+DL.imgcaption{border:1px solid #ccc;margin:0 0 12px 0;background:#fff;}
+DL.imgcaption DT{padding:2px}
+DL.imgcaption DD{text-align:center;color:#555;padding:3px 5px;font-size:92%;font-weight:bold;line-height:135%;background:#eee;margin:1px;}
+DL.imgcaption IMG{vertical-align:bottom;margin:0;}
+
+DL.aligncenter{text-align:center;margin:0 auto 12px auto;display:table;width:expression((this.getElementsByTagName('IMG'))[0].width+6);}
+DL.imgwide{width:auto !important;display:block;clear:both;}
+
+
+/*______________________________________ LAYOUT ___________________*/
+#doc{text-align:left;}
+#header{position:relative;}
+
+#midwrap2{width:100%;overflow:hidden;}
+#colmask{float:left;position:relative;overflow:hidden;clear:both;width:100%;}
+#colmid{float:left;position:relative;width:200%;left:0;}
+#colright{float:left;position:relative;width:100%;left:50%;margin-left:-200px;}
+#col1wrap{float:right;position:relative;width:50%;right:100%;}
+#col1pad{overflow:hidden;margin-left:200px;}
+#col1{position:relative;width:100%;}
+#col3{float:left;position:relative;overflow:hidden;width:200px;}
+
+
+
+#header, #mid2, #footer{
+margin:0 auto;
+width:100%;
+max-width:895px; /* sirka stranky */
+}
+#headerwrap{
+background:#55555555;
+padding:0 12px; /* sirka odstinu */
+}
+#mid2{
+max-width:919px; /* plus sirka odstinu */
+}
+
+#mid2,#mid3,#colright,#col3,#col1wrap,.cornerwrap,.cornerwrapbot,.corner{
+_background-image:none !important; /* IE 6 nepodporuje PNG */
+}
+
+#mid{
+background:url(../../css/zeleny/midbgx.html) repeat-x #555;
+}
+#mid2{
+background:url(../../css/zeleny/shadeleft.html) repeat-y;
+}
+#mid3{
+margin-left:12px;
+padding-right:12px;
+background:url(../../css/zeleny/shaderight.html) 100% 0 repeat-y;
+overflow:hidden;
+}
+#colmid{
+background:#fff;
+}
+#colright{
+background:url(../../css/zeleny/bgr.html) 0 0 repeat-y #E1E8DA;
+}
+#col1pad{
+padding:20px 15px 30px 15px;
+background:url(../../css/zeleny/midtop.html) 0 0 no-repeat;
+}
+#col3{
+background:url(../../css/zeleny/corner_tr.html) 190px 0 no-repeat;
+}
+
+.colin A{
+text-decoration:none;
+}
+.colin{
+padding:14px 14px 0 14px;
+}
+#footerwrap{
+background:#111;
+padding:15px 0 30px 0;
+margin-top:-15px;
+width:100%;
+}
+#footer{
+position:relative;
+border-top:2px solid #C5D3B7;
+}
+#footer,#footer .cornerwrapbot{
+background-color:#555;
+}
+
+
+/*______________________________________ OBLOUCKY ___________________*/
+.cornerwrap, .cornerwrapbot{
+height:10px;
+background:url(../../css/zeleny/corner_tl.html) no-repeat;
+position:absolute;
+width:100%;
+}
+.corner{
+width:10px;height:10px;
+float:right;
+background:url(../../css/zeleny/corner_tr.html) no-repeat;
+}
+.cornerwrapbot{
+bottom:0;
+background:url(../../css/zeleny/corner_bl.html) no-repeat;
+}
+.cornerwrapbot .corner{
+background:url(../../css/zeleny/corner_br.html) no-repeat;
+}
+
+
+/*______________________________________ HLAVICKA ___________________*/
+
+.logow{background:no-repeat 0 50% url(header513251325132.jpg?1473024184) ;margin-bottom:12px;}
+.logo{position:relative;height:311px;}
+.logo H1{font-size:30px;font-weight:normal;margin:0;padding:0;}
+
+.logo H1 A{z-index:10;position:absolute;display:block;text-decoration:none;width:100%;height:100%;text-align:center;}
+.logo H1 SPAN{display:inline-block;height:100%;vertical-align:middle;}
+.logo H1 STRONG{color:#d9f1be;display:inline-block;vertical-align:middle;padding:20px;cursor:pointer;}
+
+.subtitle{position:absolute;display:block;text-decoration:none;width:100%;height:100%;text-align:right;}
+.subtitle SPAN{display:inline-block;height:100%;vertical-align:bottom;}
+.subtitle EM{color:#f5ffe9;font-size:14px;display:inline-block;vertical-align:bottom;padding:30px;cursor:pointer;font-style:normal;}
+
+
+
+/*______________________________________ PATICKA ___________________*/
+.footer{padding:0 12px;}
+.footer UL{list-style:none;padding:7px 0;margin:0;text-align:center;position:relative;width:100%;}
+.footer LI{display:inline;margin:0 8px;padding:0;}
+.footer A{color:#eee;font-size:92%;text-decoration:none;}
+.footer A:hover{color:#fff;}
+
+LI.wz A{position:absolute;right:4px;text-decoration:none;margin:0;font-size:100%;}
+LI.webtreelink A{background:url(../../../404.szm.com/index.html) 0 0 no-repeat;padding-left:20px;}
+LI.loginlink A{position:absolute;left:4px;margin:0;}
+LI.rss1 A,
+LI.rss2 A{background:url(../../css/all/rss.html) 0 0 no-repeat;padding-left:20px;}
+
+#footer .pcont{ /* uzivatelsky obsah */
+color:#eee;
+padding-left:16px;
+padding-right:16px;
+}
+#footer .pcont A{
+color:#eee;
+}
+#footer .box .pcont{ /* pokud je text v boxu, pak tmava barva */
+color:#000;
+}
+#footer .box .pcont A{
+color:#0033cc;
+}
+
+/*______________________________________ VYPIS PRISPEVKU ___________________*/
+
+.listposts{padding:10px 0;clear:both;}
+.listposts .first{border-top:0;padding-top:0;}
+
+.xpost{padding:18px 0 6px 0;border-top:1px dotted #B5C5B6;position:relative;clear:both;width:100%;overflow:hidden;}
+
+.xpost H2{font-weight:bold;font-size:138%;display:block;margin:0 0 8px 0;padding:0;color:#122B03;}
+.xpost H2 A{text-decoration:none;}
+.xpost-content{padding:12px 0 0 0;clear:both;}
+
+.xpost-album .xpost-content{padding:0 3px 4px 3px;text-align:center;}
+.xpost-album .xpost-content A IMG{border:0 !important;margin:12px 0 0 0;}
+
+.xbar{clear:both;}
+.xbar-in{font-size:92%;clear:both;color:#333;background:#EFF3EC;padding:4px 6px;border:1px solid #D6E0CC;border-width:0 1px;}
+.xbar A{text-decoration:none;}
+.xbar EM{font-style:normal;color:#777;padding:0 3px;font-family:tahoma;}
+.xbar-a, .xbar-b{background:#D6E0CC;margin:0 1px;height:1px;font-size:0;}
+
+.xposts-more{text-align:right;border-top:1px dotted #bbb;padding:8px 7px;}
+
+.groupdate{padding:0 15px;float:right;margin-bottom:9px;background:url(../../css/zeleny/vdate.html) no-repeat right 7px;color:#305C07;}
+
+.postnextprev{line-height:135%;width:100%;overflow:hidden;margin-bottom:12px;}
+.postnextprev SMALL{font-size:88%;color:#444;margin:0 5px;word-spacing:-1px}
+.postprev{float:right;text-align:right}
+
+
+/*################################################## MODULY ####################################*/
+
+
+/*______________________________________ DROBECKOVA NAVIGACE ___________________*/
+.breadcrumb{font-size:92%;padding:0 0 5px 0;border-bottom:1px dotted #bbb;margin-bottom:12px;width:100%;overflow:hidden;}
+.breadcrumb UL{margin:0;padding:0;}
+.breadcrumb LI{color:#444;display:block;float:left;white-space:nowrap;background:url(../../../404.szm.com/index.html) 1px 50% no-repeat;padding:0 6px 0 14px;}
+.breadcrumb LI.first,
+.breadcrumb LI.label{background:none;padding-left:0;}
+.breadcrumb A{text-decoration:none;}
+.breadcrumb A.on{text-decoration:none;color:#111;font-weight:bold;}
+
+
+/*______________________________________ BOXY VE SLOUPCI ___________________*/
+.box{margin-bottom:12px;}
+.boxin{
+position:relative;
+width:100%;
+}
+
+.box H4{
+margin:0;padding:2px 3px;text-align:right;text-transform:uppercase;letter-spacing:1px;
+font-size:92%;font-weight:bold;color:#5a8230;
+}
+
+.boxcont{
+padding:0 5px 0 8px;
+border:1px solid #b5c5b6;
+border-top-width:2px;
+background:#EEF2EA;
+}
+
+/* definuje UL pro kategorie, odkazy atd. */
+.boxcont UL{padding:5px 0;margin:0;list-style:none;}
+.boxcont LI{padding:0;margin:0;}
+.boxcont LI.on A{font-weight:bold;color:#111;text-decoration:none;}
+.boxcont LI.on50 A{font-weight:bold;}
+.boxcont LI.on A IMG{border-color:#111 !important;}
+
+
+/* tuto tridu maji MODULY s obsahem, ktery byl pridan pres HTML editor (napr. profil, vlastni text/html) */
+/* tuto tridu ma take  HTML editoru v administraci daneho modulu */
+.pcont{padding:8px 8px 0 8px;}
+.pcont P{padding:0 0 8px 0;}
+.pcont UL,
+.pcont OL{padding:0;margin:0 0 4px 22px;list-style:disc;}
+.pcont OL{list-style:decimal;}
+.pcont LI{padding:0 0 4px 0;list-style:disc;}
+.pcont IMG{}
+
+
+/*______________________________________ VLASTNI TEXT / HTML ____________*/
+.rawuserhtml .pcont{padding:0;margin-bottom:12px;} /* [.rawuserhtml] pokud zvoli, ze nechce box */
+
+.userhtml .boxcontent{padding:12px 8px} /* vzdy je trida [.userhtml] a dodatecne [.usertext] v pripade, ze se pouzil editor */
+.usertext .boxcontent{padding:12px 8px 0 8px;} /* je vzdy vlozen paragraf, ktery ma "margin-bottom" */
+.userhtml IMG{margin:0 0 12px 0;}
+
+
+/*______________________________________ ODKAZY + RUBRIKY ____________*/
+.linksgroup LI{margin:0;padding:0}
+.linksgroup A{display:block;padding:2px 0;margin:1px 0;position:relative;}
+.linksgroup A:hover, .linksgroup LI.on50 A{border-right:3px solid #B5C5B6;}
+.linksgroup LI.on A{border-right:3px solid #336408;}
+
+
+/*______________________________________ NAVIGACE ("ODKAZY" VE HLAVICCE) ___________________*/
+#header .w-links{margin:0;padding:0;border:0;}
+#header .w-links UL{padding:0;margin:0;text-align:center;}
+
+#header .w-links LI{padding:0;margin:0;display:inline;margin:0 5px;}
+
+#header .w-links A{color:#eee;display:inline-block;margin:0;padding:0 0 0 5px;height:25px;
+background:url(../../css/zeleny/menu.html) 0 0;text-decoration:none;font-weight:bold;}
+
+#header .w-links SPAN{background:url(../../css/zeleny/menu.html) 100% 0;padding:4px 14px 0 9px;display:inline-block;cursor:pointer;}
+
+#header .w-links A:hover{background-position:0 -50px;border:0;}
+#header .w-links A:hover SPAN{background-position:100% -50px;}
+
+#header .w-links LI.on A{left:0;background-position:0 -25px;color:#000;border:0;}
+#header .w-links LI.on SPAN{background-position:100% -25px;}
+
+#header .w-links LI.on SPAN{cursor:default;}
+
+#header .w-links .boxcont,
+#header .w-links .boxin{padding:0;border:0;background:none;}
+
+
+/*______________________________________ ARCHIV ____________*/
+.w-archive UL LI SPAN{color:#666;font-size:88%;font-family:verdana;margin-left:2px;}
+.w-archive UL LI{padding:4px 0;text-transform:lowercase}
+.w-archive UL LI UL{padding:6px 0 0 0;}
+.w-archive UL LI UL LI{padding:0 0 4px 22px;background:url(../../css/all/t.html) 8px 50% no-repeat;}
+.w-archive UL LI UL LI.last{background-image:url(../../css/all/L.html);}
+.w-archive UL LI.last UL LI.last{padding-bottom:0 !important;}
+.w-archive A.on{font-weight:bold;text-decoration:none;color:#111;}
+.w-archive A.on50{font-weight:bold;}
+
+.w-archive UL STRONG{font-weight:normal}
+.w-archive UL LI{word-spacing:1px}
+.w-archive UL LI EM{font-style:normal}
+
+
+/*______________________________________ VYHLEDAVANI ____________*/
+.w-search .boxcont{margin:0;padding:6px;}
+.search-inp{width:110px;}
+.search-sub{background:url(../../css/all/magnifier.html);border:0;cursor:pointer;width:22px;height:22px;margin:0;padding:0;vertical-align:top;margin-left:5px;}
+.searchform{text-align:center;}
+.highlight{background:#ffffaa !important;}
+
+
+/*______________________________________ ANKETA V BOCNIM SLOUPCI + HLAVNIM BLOKU ____________*/
+.poll .boxcont{padding:3px 9px 8px 9px;overflow:hidden;}
+
+.poll-voted INPUT,
+.poll-hidden .poll-score,
+.poll-hidden .poll-total{display:none}
+
+.poll-row{width:100%;clear:both;padding:8px 0 0 0;}
+.poll-answer{font-weight:bold;float:left;margin:0 5px 1px 0;}
+
+.poll-score{float:right;width:100%;display:inline-block;margin-top:3px;}
+.poll-perc{font-size:88%;width:35px;text-align:right;float:right;margin-left:-35px;}
+.poll-pipe{color:#222;border:1px solid #ffc591;padding:1px;background:#fff;margin-right:35px}
+.poll-pipe DIV{background:url(../../css/all/poll-orange.html) repeat-x #ff7800;width:0;font-size:0;height:10px;}
+
+.poll-footer{clear:both;padding-top:9px;font-size:92%;width:100%;}
+.poll-footer INPUT{font-weight:bold;width:80px;float:right;}
+.poll-footer DIV{padding-top:4px;}
+
+.poll-thanks{text-align:right;}
+
+.aloading,
+.jsloading{display:block;float:left;background:url(../../css/classic/loading.html) no-repeat 0 50%;padding-left:22px;color:#cc0000 !important;}
+
+.aloading{display:inline-block;}
+
+
+/*______________________________________ ANKETA V HLAVNIM BLOKU ____________*/
+#col1 .pollw{border:0;clear:both;float:none;text-align:center;margin:0 auto;width:420px;/* u IE nejde DIV SHRINK */}
+#col1 .poll{border:1px solid #FFC591;margin:0 auto 12px auto;min-width:300px;display:inline-block;text-align:left;
+-webkit-border-radius:2px;-moz-border-radius:3px;}
+
+#col1 .pollw .boxcont{background:transparent;border:0;margin:0;}
+#col1 .pollw .boxin{border:0;border:1px solid #fff;margin:0;width:auto;}
+#col1 .poll-answer,
+#col1 .poll-score{margin-left:10px;}
+
+#col1 .poll .boxin{background:#ffffdd;}
+#col1 .poll H4{background:none;font-weight:bold;font-size:107%;border:0;padding:8px 8px 0 10px;color:#FF5A00;}
+#col1 .poll-score{width:220px;}
+
+#col1 .jsloading{background-image:url(../../../404.szm.com/index.html)}
+
+
+/*______________________________________ KOMENTARE ____________*/
+.comments .hr{margin-top:8px}
+.comments{width:100%}
+
+.comMsg{text-align:left;color:#555;font-size:92%;padding:15px 0 5px 1px;}
+
+.thread{background:url(../../css/all/comment-thread.html) repeat-y 20px 0;padding-left:20px;}
+
+.t-last{background:none}
+.c-padd{padding-left:10px;background:url(../../css/all/comment-thread-t.html) no-repeat 0 50%;}
+.c-last{background:url(../../css/all/comment-thread-L.html) no-repeat 0 50%;}
+.c-level0,
+.t-level0{padding:0;margin:0;background:none;}
+
+.com100{clear:both;width:100%;overflow:auto;}
+.com{_display:inline-block;overflow:hidden;border:1px solid #ccc;margin-top:8px;background:url(../../css/all/comment-bg.html) repeat-y left;}
+
+.cHili{background-color:#ffffcc;}
+
+.cHeader{float:left;padding:8px;border-top:1px solid #fdfdfd;background:url(../../css/all/comment-bg.html) #eee repeat-y left;font-size:92%;width:100px;}
+
+.cAuthor{font-weight:bold;cursor:pointer;display:inline;}
+.cMe .cAuthor{color:#cc0000;}
+.cWeb{float:right;margin:8px;display:inline;clear:right;background:url(../../css/all/world.html) no-repeat right;}
+.cWeb A{text-decoration:none;width:41px;height:16px;display:block;cursor:pointer;color:#777;}
+.cDate{color:#222;font-size:92%;}
+.cReply{float:right;font-size:88%;padding:8px;clear:right;}
+.cDeleted{color:#444;}
+.cDeleted STRONG{display:block;margin:8px 8px 0 0;font-size:88%;color:#666;font-weight:bold;}
+.cNotApproved{color:#7d00dd;font-size:92%;}
+
+.cContent{position:relative;margin-left:124px;_margin-left:8px;_float:left;}
+.cContent P{padding:8px 8px 0 0;}
+.cContent P A{color:#003b7c;}
+.c-reply .cContent{padding-bottom:8px;}
+
+
+/*______________________________________ PODSTRANKA ____________*/
+.content{clear:both;width:100%;overflow:hidden;margin-bottom:14px;overflow:hidden;position:relative;}
+
+.page-description{background:http://b.wz.cz/css/zeleny/hr.gif) 50% 100% no-repeat;margin:3px 0 13px 0;
+margin-bottom:12px;padding:10px 0 20px 0;width:100%;overflow:auto;}
+
+
+.post-date{margin:0 0 12px 15px;float:right;}
+.post-date A{text-decoration:none !important;font-weight:bold;color:#5A8230;display:block;padding:2px 7px;text-align:right;border:1px solid #B5C5B6;}
+.post-date SPAN{border-left:1px solid #B5C5B6;padding:3px 0 3px 7px;margin-left:3px;}
+.post-date A:hover{background:#EAEFE5;}
+
+
+.page H4.hline{
+text-align:center;
+font-weight:bold;color:#111;font-size:107%;
+position:relative;margin:0 -13px 8px -13px;padding:20px 26px 4px 0;
+width:100%;background:url(../../css/zeleny/hline.html) bottom repeat-x;
+}
+A.hline-back{float:left;font-size:92%;background:url(../../../404.szm.com/index.html) 0 2px no-repeat;padding-left:14px;position:absolute;left:14px;}
+
+
+
+/*______________________________________ FORMULARE ____________*/
+.formtable{text-align:center;margin:0 auto;}
+.formtable TABLE{padding:0;margin:20px auto 0 auto;text-align:left;}
+.formtable TD{padding:0 0 2px 10px;}
+.formtable TH{padding:0 0 3px 0;text-align:right;font-weight:normal;line-height:135%}
+.formtable TH SMALL{font-weight:normal;}
+.formtable SMALL{font-size:84%;}
+
+LABEL.help{border-bottom:1px dotted #bbb;cursor:help;}
+
+TH.rq SPAN{color:#cc0000 !important;margin-right:3px;}
+TH.rq{font-weight:bold;}
+
+TD.submit{padding-top:10px;}
+TD.submit INPUT{font-weight:bold;padding:2px 12px;width:auto;overflow:visible;}
+
+.captcha IMG{border:1px solid #ccc;}
+.captcha TH{vertical-align:top;}
+
+
+/*______________________________________ TAGY ____________*/
+.w-tags .boxcont{text-align:center;padding:6px 4px 6px 6px;}
+
+.w-tags A{margin:2px 2px 2px 0;padding:1px 4px;display:inline-block;text-decoration:none;vertical-align:middle;}
+.w-tags A:hover{color:#fff;background:#2A5307;}
+.w-tags A.on{text-decoration:none;background:#111 !important;color:#fff !important;}
+A.tag1{font-size:92%;font-weight:200;}
+A.tag2{font-size:100%;font-weight:300;}
+A.tag3{font-size:108%;font-weight:400;}
+A.tag4{font-size:115%;font-weight:500;}
+A.tag5{font-size:123%;font-weight:600;}
+A.tag6{font-size:130%;font-weight:700;}
+
+.page-tags .boxcontent{font-size:108%;}/* na strance [Tagovy mrak] budou vsechny tagy vetsi */
+.page-tags A{margin:1px;padding:4px 6px;}
+
+
+/*______________________________________ STRANKOVANI ____________*/
+.paging{text-align:center;list-style:none;border-top:1px dotted #ccc;margin:14px 0 0 0;padding:16px 0 0 0;}
+.paging LI{display:inline;line-height:200%;}
+.paging LI A{text-decoration:none;padding:2px 7px;border:1px solid #aaa;background:#F1F8FC;outline:0;_outline:expression(hideFocus='true');}
+.paging LI A:hover{border-color:#555;color:#000;}
+.paging LI A:active{background:#2A5307;color:#fff;}
+.paging LI A.on{border-color:#111;text-decoration:none;color:#111;font-weight:bold;background:#fff}
+.pagingLabel{font-size:92%;text-align:center;}
+
+
+
+/*______________________________________ SHOUTBOX ____________*/
+FIELDSET{margin:0;padding:0;border:0;}
+
+.w-shoutbox .boxcont{padding:0;}
+.w-shoutbox IFRAME{width:100%;border:0;height:220px;}
+
+#sbox{text-align:left;padding:0;background:#EEF2EA;} /* BODY v IFRAME */
+
+.sbox-add{border-bottom:1px solid #fff;background:#dbe6df;overflow:auto;padding:5px 0;text-align:center;}
+.sbox-add A{text-decoration:none;background:url(../../../404.szm.com/index.html) no-repeat left;margin:0 auto;display:inline-block;padding-left:22px;}
+
+.sbox-wrap{padding:2px 0;}
+.sbox-none{text-align:center;padding:25px 0;color:#555;}
+.sbox-com{padding:4px 6px 4px 8px;}
+.sbox-com A.c IMG{background:#fff;border:1px solid #aaa !important;padding:1px 2px;}
+.sbox-com A.c:hover IMG{background:#d1ddff;border-color:#0033cc !important;}
+.sbox-com-first{border-top:0;}
+.sbox-com SPAN{font-weight:bold;color:#444;}
+.sbox-com P{padding:0;margin:0;display:inline;line-height:135%;}
+
+/* definuje pridani nove zpravy */
+BODY.sbox-form{text-align:center !important;padding:5px 0 !important;}
+BODY.sbox-form A{float:left;}
+#sbox LABEL{padding-bottom:3px;display:block;}
+#sbox TEXTAREA, #sbox INPUT{width:85%;margin-bottom:3px;}
+#sbox #captcha{display:none;}
+#sbox #captcha IMG{margin:0 0 10px 0;border:1px solid #555;}
+#sbox #captcha INPUT{margin:2px 0 10px 0;}
+.sbox-sub{width:85%;margin:0 auto;}
+#sbox .sbox-sub INPUT{width:85px;float:right;font-weight:bold;color:#005400;}
